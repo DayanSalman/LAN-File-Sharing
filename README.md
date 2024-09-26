@@ -39,8 +39,8 @@ A lightweight web application that facilitates **file sharing** over a Local Are
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/lan-file-sharing-code-snippet-manager.git
-    cd lan-file-sharing-code-snippet-manager
+    git clone https://github.com/DayanSalman/LAN-File-Sharing.git
+    cd LAN-File-Sharing
     ```
     
 2. Run the Flask application:
@@ -84,7 +84,7 @@ users = {
 
 ## File Structure
 ```bash
-lan-file-sharing-code-snippet-manager/
+LAN-File-Sharing/
 │
 ├── LAN_Sharing/               
 │   ├── auth.py                 # Authentication handling
