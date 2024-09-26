@@ -42,24 +42,13 @@ A lightweight web application that facilitates **file sharing** over a Local Are
     git clone https://github.com/your-username/lan-file-sharing-code-snippet-manager.git
     cd lan-file-sharing-code-snippet-manager
     ```
-
-2. Create and activate a virtual environment:
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
-    ```
-
-3. Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4. Run the Flask application:
+    
+2. Run the Flask application:
     ```bash
     python app.py
     ```
 
-5. Access the application at `http://localhost:80` or via your LAN's local IP address.
+3. Access the application at `http://localhost:80` or via your LAN's local IP address.
 
 ## Usage
 
@@ -94,16 +83,13 @@ users = {
 - **File Management**: Option to clear all uploaded files and code snippets with one click.
 
 ## File Structure
-
-```
+```bash
 lan-file-sharing-code-snippet-manager/
 │
-├── app.py                     # Main Flask application
-├── templates/
-│   └── index.html              # Main HTML file for the web interface
-├── static/
-│   └── styles.css              # Custom styles (if any)
-├── uploads/                    # Folder for uploaded files
+├── LAN_Sharing/               
+│   ├── auth.py                 # Authentication handling
+│   └── templates/
+│       └── index.html          # Main HTML file for the web interface
 ├── requirements.txt            # Python dependencies
 └── README.md                   # Project documentation
 ```
