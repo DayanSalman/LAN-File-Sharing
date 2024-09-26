@@ -42,7 +42,7 @@ A lightweight web application that facilitates **file sharing** over a Local Are
     
 2. Run the Flask application:
     ```bash
-    python app.py
+    python auth.py
     ```
 
 3. Access the application at `http://localhost:80` or via your LAN's local IP address.
