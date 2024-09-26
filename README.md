@@ -42,6 +42,7 @@ A lightweight web application that facilitates **file sharing** over a Local Are
     
 2. Run the Flask application:
     ```bash
+    cd Main
     python auth.py
     ```
 
@@ -83,7 +84,7 @@ users = {
 ```bash
 LAN-File-Sharing/
 │
-├── LAN_Sharing/               
+├── Main/               
 │   ├── auth.py                 # Authentication handling
 │   └── templates/
 │       └── index.html          # Main HTML file for the web interface
