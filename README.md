@@ -19,8 +19,7 @@ A lightweight web application that facilitates **file sharing** over a Local Are
 4. [File Structure](#file-structure)
 5. [Tech Stack](#tech-stack)
 6. [Future Enhancements](#future-enhancements)
-7. [Contributing](#contributing)
-8. [License](#license)
+7. [License](#license)
 
 ---
 
@@ -110,7 +109,7 @@ LAN-File-Sharing/
 
 ## License
 
-This project is licensed under the MIT License. See the (LICENSE) file for more details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ---
 
