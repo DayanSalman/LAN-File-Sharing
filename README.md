@@ -108,20 +108,9 @@ LAN-File-Sharing/
 - **Database Integration**: Use a database (e.g., SQLite, PostgreSQL) to store file and code metadata.
 - **User Management**: Add support for multiple users with different roles and permissions.
 
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
-
-To contribute:
-1. Fork the repository.
-2. Create your feature branch (`git checkout -b feature/NewFeature`).
-3. Commit your changes (`git commit -am 'Add some feature'`).
-4. Push to the branch (`git push origin feature/NewFeature`).
-5. Create a new Pull Request.
-
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
+This project is licensed under the MIT License. See the (LICENSE) file for more details.
 
 ---
 
