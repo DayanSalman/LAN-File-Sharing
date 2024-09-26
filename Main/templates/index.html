@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAN </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 600px;
+            flex: 1;
+        }
+        h1 {
+  font-size: 70px;
+  font-weight: 600;
+  color: #b393d3;
+  animation: color-change 3s infinite;
+}
+
+@keyframes color-change {
+  0% { color: #553c9a; }
+  50% { color: #b393d3; }
+  100% { color: #553c9a; }
+}
+
+        h2 {
+            margin-top: 30px;
+            color: #373c42;
+            font-size: 20px; 
+        }
+        footer {
+            background-color: #373c42;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        .footer-links {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer-links:hover {
+            text-decoration: underline;
+        }
+    </style>
+  
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">LAN File Sharing</h1>
+
+        <h2>Upload File</h2>
+        <form action="/upload" method="POST" enctype="multipart/form-data" class="form-inline">
+            <div class="input-group mb-3 flex-grow-1">
+                <input type="file" name="file" class="form-control" required>
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                </div>
+            </div>
+        </form>
+
+        <h2>Save Code Snippet</h2>
+        <form action="/save_code" method="POST" class="mb-3">
+            <textarea name="code" class="form-control" rows="5" placeholder="Enter your code here..." required></textarea>
+            <button type="submit" class="btn btn-primary mt-2">Save Code</button>
+        </form>
+
+        <h2>Uploaded Files</h2>
+        <ul class="list-group">
+            {% for file in files %}
+            <li class="list-group-item">
+                {{ file }} 
+                <a href="/download/{{ file }}" class="btn btn-success btn-sm">Download</a>
+            </li>
+            {% else %}
+            <li class="list-group-item">No files available</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Saved Code Snippets</h2>
+        <ul class="list-group">
+            {% for code in code_snippets %}
+            <li class="list-group-item">
+                <pre>{{ code }}</pre>
+                <button class="btn btn-info btn-sm copy-button" onclick="copyToClipboard(this, `{{ code }}`)">Copy Code</button>
+            </li>
+            {% else %}
+            <li class="list-group-item">No code snippets saved</li>
+            {% endfor %}
+        </ul>
+
+        {% if files %}
+        <form action="/clear" method="POST" class="mt-3">
+            <button type="submit" class="btn btn-danger btn-lg btn-block">Clear All Files</button>
+        </form>
+        {% endif %}
+
+        {% if code_snippets %}
+        <form action="/clear_codes" method="POST" class="mt-3">
+            <button type="submit" class="btn btn-danger btn-lg btn-block">Clear All Code Snippets</button>
+        </form>
+        {% endif %}
+    </div>
+
+    <!-- Simplified Responsive Footer -->
+    <footer>
+        <p>&copy; 2024 Powered by Dayan. All rights reserved.</p>
+        <p>
+            <a href="#" class="footer-links">Privacy Policy</a> | 
+            <a href="#" class="footer-links">Terms of Service</a>
+        </p>
+    </footer>
+
+    <script>
+        function copyToClipboard(button, code) {
+            // Create a temporary textarea element to hold the code
+            const textarea = document.createElement('textarea');
+            textarea.value = code; // Set the code to the textarea
+            document.body.appendChild(textarea); // Append to the body
+            textarea.select(); // Select the text
+            document.execCommand('copy'); // Copy the text to clipboard
+            document.body.removeChild(textarea); // Remove the textarea
+
+            // Change button text to indicate success
+            const originalText = button.innerText; // Store the original text
+            button.innerText = 'Copied to Clipboard!';
+
+            // Reset button text after 2 seconds
+            setTimeout(() => {
+                button.innerText = originalText;
+            }, 3000);
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
 
